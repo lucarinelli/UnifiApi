@@ -13,9 +13,5 @@
         }
     ],
     "minimum-stability": "stable",
-    "autoload": {
-        "psr-0": {
-            "UnifiApi": "src/"
-        }
-    }
+    "psr-4": { "rinelliluca\\UnifiApi\\": "src/" }
 }
