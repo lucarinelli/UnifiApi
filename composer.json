@@ -12,7 +12,7 @@
             "email": "rinelliluca@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-0": {
             "UnifiApi": "src/"
