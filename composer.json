@@ -1,0 +1,21 @@
+{
+    "name": "rinelliluca/unifi-api",
+    "description": "Package for https://github.com/Art-of-WiFi/UniFi-API-browser class.unifi.php",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luca Rinelli",
+            "email": "rinelliluca@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "UnifiApi": "src/"
+        }
+    }
+}
