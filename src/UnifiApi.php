@@ -84,7 +84,7 @@ class UnifiApi
     /**
      * Login to UniFi Controller
      */
-    public function login()
+    public function login($hotspot = false)
     {
         /**
          * if user has $_SESSION['unificookie'] set, skip the login ;)
@@ -97,7 +97,8 @@ class UnifiApi
         curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_REFERER, $this->baseurl.'/login');
         curl_setopt($ch, CURLOPT_URL, $this->baseurl.'/api/login');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['username' => $this->user, 'password' => $this->password]));
+        if($hotspot) curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['username' => $this->user, 'password' => $this->password, 'for_hotspot' => $hotspot, 'site_name' => $this->site]));
+        else curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['username' => $this->user, 'password' => $this->password]));
         if (($content = curl_exec($ch)) === false) {
             trigger_error('cURL error: '.curl_error($ch));
         }
